@@ -6,15 +6,17 @@ const ActiveQuiz = props => (
     <div className={classes.ActiveQuiz}>
         <p>
             <span>
-                <strong>2.</strong>&nbsp;
-                How you doing?
+                <strong>{props.answerNumber}.</strong>&nbsp;
+                {props.question}
             </span>
 
-            <small>4 from 12</small>
+            <small>{props.answerNumber} from {props.quizLength}</small>
         </p>
 
         <AnswersList
+            state={props.state}
             answers={props.answers}
+            onAnswerClick={props.onAnswerClick}
         />
     </div>
 )
